@@ -25,7 +25,7 @@ namespace DecimalConverter
             result = converter.Division("1777");
 
             converter = new NumberStringConverter(16, 36);
-            result = converter.Division("1FF");
+            result = converter.Division("8BB3CCDA252644596D87918B488002A3");
         }
     }
 }

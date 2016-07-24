@@ -8,7 +8,6 @@ namespace DecimalConverter
 {
     public class NumberStringConverter
     {
-        // private Dictionary<char, int> NumberDic { get; set; } = new Dictionary<char, int>();
         private string LetterMap { get; set; } = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         private int OriginDecimal { get; set; }
