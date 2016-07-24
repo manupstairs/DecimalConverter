@@ -38,13 +38,13 @@ namespace DecimalConverter
                 divistionResult = storage.DivisionResultInOriginDecimal;
             }
 
-            int index = ConvertToInt(divistionResult) ;
+            int index = (int)ConvertToInt(divistionResult) ;
             return LetterMap[index] + result;
         }
 
         private bool IsEnoughDivision(string number)
         {
-            int num = ConvertToInt(number);
+            double num = ConvertToInt(number);
             return num >= TargetDecimal;
         }
 
@@ -54,11 +54,11 @@ namespace DecimalConverter
 
             foreach (char letter in number)
             {
-                int num = ConvertToInt(divisionStorage.RemainderInTargetDecimal + letter);
+                double num = ConvertToInt(divisionStorage.RemainderInTargetDecimal + letter);
 
-                int result = num / TargetDecimal;
+                int result = (int)(num / TargetDecimal);
                 divisionStorage.DivisionResultInOriginDecimal += LetterMap[result];
-                int remainder = num % TargetDecimal;
+                int remainder = (int)(num % TargetDecimal);
                 divisionStorage.RemainderInTargetDecimal = LetterMap[remainder].ToString();
 
             }
@@ -66,15 +66,15 @@ namespace DecimalConverter
             return divisionStorage;
         }
 
-        public int ConvertToInt(string number)
+        public double ConvertToInt(string number)
         {
             int positon = 0;
-            int total = 0;
+            double total = 0;
             while (positon < number.Length)
             {
                 int index = LetterMap.IndexOf(number[positon]);
 
-                total += (int)Math.Pow(OriginDecimal, (number.Length - positon - 1)) * index;
+                total +=  Math.Pow(OriginDecimal, (number.Length - positon - 1)) * index;
 
                 positon++;
             }
