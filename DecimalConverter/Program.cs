@@ -26,6 +26,9 @@ namespace DecimalConverter
 
             converter = new NumberStringConverter(16, 36);
             result = converter.Division("8BB3CCDA252644596D87918B488002A3");
+
+            converter = new NumberStringConverter(16, 36);
+            result = converter.Division("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
         }
     }
 }
