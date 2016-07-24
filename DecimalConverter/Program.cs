@@ -13,7 +13,7 @@ namespace DecimalConverter
             //var converter = new NumberStringConverter(16, 10);
             //var result = converter.ConvertToInt("B1");
 
-            string hex = "6f1";
+            string hex = "6F1";
             var converter = new NumberStringConverter(16, 10);
             var result = converter.Division(hex);
 
@@ -25,7 +25,7 @@ namespace DecimalConverter
             result = converter.Division("1777");
 
             converter = new NumberStringConverter(16, 36);
-            result = converter.Division("8BB3CCDA252644596D87918B488002A3");
+            result = converter.Division("1FF");
         }
     }
 }

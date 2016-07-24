@@ -21,7 +21,7 @@ namespace DecimalConverter.Test
             var converter = new NumberStringConverter(16,10);
             var result = converter.DivisionStep(hex);
 
-            Assert.AreEqual<string>(result.DivisionResult,"177");
+            Assert.AreEqual<string>(result.DivisionResultInOriginDecimal,"177");
         }
     }
 }

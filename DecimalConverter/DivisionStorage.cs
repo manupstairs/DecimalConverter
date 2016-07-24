@@ -8,7 +8,7 @@ namespace DecimalConverter
 {
     public class DivisionStorage
     {
-        public string DivisionResult { get; set; }
+        public string DivisionResultInOriginDecimal { get; set; }
         
        // public int Position { get; set; }
         

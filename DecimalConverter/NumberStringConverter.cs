@@ -25,17 +25,18 @@ namespace DecimalConverter
 
         public string Division(string number)
         {
+            number = number.ToUpper();
             string result = string.Empty;
             DivisionStorage storage = DivisionStep(number);
 
             result = storage.RemainderInTargetDecimal + result;
 
-            string divistionResult = storage.DivisionResult;//.TrimStart('0');
+            string divistionResult = storage.DivisionResultInOriginDecimal;
             while (IsEnoughDivision(divistionResult))
             {
                 storage = DivisionStep(divistionResult);
                 result = storage.RemainderInTargetDecimal + result;
-                divistionResult = storage.DivisionResult;
+                divistionResult = storage.DivisionResultInOriginDecimal;
             }
 
             int index = ConvertToInt(divistionResult) ;
@@ -57,7 +58,7 @@ namespace DecimalConverter
                 int num = ConvertToInt(divisionStorage.RemainderInTargetDecimal + letter);
 
                 int result = num / TargetDecimal;
-                divisionStorage.DivisionResult += result;
+                divisionStorage.DivisionResultInOriginDecimal += LetterMap[result];
                 int remainder = num % TargetDecimal;
                 divisionStorage.RemainderInTargetDecimal = LetterMap[remainder].ToString();
 
